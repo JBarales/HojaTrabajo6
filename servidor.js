@@ -39,7 +39,7 @@ app.put('/users/:dpi', (req, res) => {
         return res.status(404).json({ error: 'Usuario no encontrado.' });
     }
 
-    // Si se intenta cambiar el DPI, verificar que no esté registrado
+    // Si se intenta cambiar el DPI, verificar que no este registrado
     const existingUser = users.find(user => user.dpi === req.body.dpi);
     if (existingUser && existingUser.dpi !== dpi) {
         return res.status(400).json({ error: 'El nuevo DPI ya está registrado.' });
